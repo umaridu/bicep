@@ -8,7 +8,7 @@ Solution for hosting a static website has been developed on Microsoft Azure. It 
 
 ### Your task
 
-1. Access the infrastructure automation code located in the repository
+1. Access the infrastructure automation code located in the repository: https://github.com/dmusial/azure-engineer-task
 2. Fork the repository to your github account
 3. Fix any errors in the current code (there are 2 errors)
 4. Amend the code so that the website is no longer available over public internet but only accessible from the network 10.128.1.0/24
