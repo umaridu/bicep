@@ -13,7 +13,7 @@ Solution for hosting a static website has been developed on Microsoft Azure. It 
 3. Fix any errors in the current code (there are 2 errors)
 4. Amend the code so that the website is no longer available over public internet but only accessible from the network 10.128.0.0/26
 5. Enable infrastructure encryption for the Storage Account which hosts the website
-6. Once all of the above tasks are done, open a pull request to merge your changes to the original main repository. Please note that your pull request will be reviewed by the assessors but not merged.
+6. Once all of the above tasks are done, open a pull request to merge your changes to the original repository. Please note that your pull request will be reviewed by the assessors but not merged.
 
 ### Notes
 
