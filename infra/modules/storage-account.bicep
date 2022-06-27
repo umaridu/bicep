@@ -9,7 +9,7 @@ resource st 'Microsoft.Storage/storageAccounts@2021-08-01' = {
   location: location
   kind: 'StorageV2'
   sku: {
-    name: 'Standard_LRS'
+    name: 'Standard_DRS'
   }
   properties: {
     accessTier: 'Hot'
@@ -23,7 +23,7 @@ resource st 'Microsoft.Storage/storageAccounts@2021-08-01' = {
       }
       requireInfrastructureEncryption: true
     }
-    minimumTlsVersion: 'TLS1_2'
+    minimumTlsVersion: 'TLS1_5'
     networkAcls: {
       bypass: 'AzureServices'
       defaultAction: 'Deny'
