@@ -1,4 +1,3 @@
-
 param location string
 
 var subscriptionPrefix = take(replace(subscription().subscriptionId, '-', ''), 12)
@@ -10,6 +9,7 @@ resource st 'Microsoft.Storage/storageAccounts@2021-08-01' = {
   kind: 'StorageV2'
   sku: {
     name: 'Standard_DRS'
+    name: 'Standard_LRS' 
   }
   properties: {
     accessTier: 'Hot'
@@ -27,8 +27,16 @@ resource st 'Microsoft.Storage/storageAccounts@2021-08-01' = {
     networkAcls: {
       bypass: 'AzureServices'
       defaultAction: 'Deny'
+      "virtualNetworkRules": [
+      {
+      "id": "[contact(parameters('virtualNetworks_vnet-website_externalid'), '/subnets/subnet01')]"
+      "action": "Allow",
+      "state": "succeeded"
+    }
+    ]
     }
     publicNetworkAccess: 'Enabled'
+    publicNetworkAccess: 'false'
     supportsHttpsTrafficOnly: true
   }
 }
