@@ -26,7 +26,7 @@ resource vnet 'Microsoft.Network/virtualNetworks@2021-05-01' = {
           privateLinkServiceNetworkPolicies: 'Enabled'
         }
       },
-            {
+      {
         name: default_subnet_name01
         properties: {
           addressPrefix: default_subnet_address01
