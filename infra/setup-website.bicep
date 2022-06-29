@@ -11,8 +11,19 @@ module resource_group 'modules/resource-group.bicep' = {
   }
 }
 
+
 module network 'modules/vnet.bicep' = {
   name: '${deployment().name}-vnet'
+  scope: resourceGroup(website_rg_name)
+  dependsOn: [
+    resource_group
+  ]
+  params: {
+    location: location
+  }
+}
+module network 'modules/privateendpoint.bicep' = {
+  name: '${deployment().name}-privateendpoint'
   scope: resourceGroup(website_rg_name)
   dependsOn: [
     resource_group
