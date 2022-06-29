@@ -1,5 +1,5 @@
 var subnetName = 'subnet01'
-var subnetRef = '${vn.id}/subnets/${subnetName}'
+var subnetRef = '${vnet.id}/subnets/${subnetName}'
 
 resource privateEndpoint 'Microsoft.Network/privateEndpoints@2020-06-01' = {
   name: 'PrivateEndpoint1'
@@ -11,7 +11,7 @@ resource privateEndpoint 'Microsoft.Network/privateEndpoints@2020-06-01' = {
       privateLinkServiceConnections: [
       {
         properties: {
-           privateLinkServiceId: stg.id
+           privateLinkServiceId: st.id
            groupIds: [
              'blob'
              ]
